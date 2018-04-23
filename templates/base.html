@@ -11,21 +11,22 @@
   </head>
   <body class="bg-light">
     <header class="navbar navbar-expand-md navbar-dark bg-dark">
-      <a class="navbar-brand" href="{% url "home" %}"><span class="oi oi-spreadsheet pr-2"></span>Kanban</a>
+      <a class="navbar-brand" href="{% url "home:index" %}"><span class="oi oi-spreadsheet pr-2"></span>Kanban</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarContent">
         <div class="navbar-nav mr-auto">
           {% block navigation %}
-            <a class="nav-item nav-link active" href="#">Home</a>
-            <a class="nav-item nav-link" href="#">Link</a>
-            <a class="nav-item nav-link disabled" href="#">Disabled</a>
+            <a class="nav-item nav-link active" href="{% url 'core:home' %}">Home</a>
+            <a class="nav-item nav-link" href="{% url 'core:groups' %}">Groups</a>
+            <a class="nav-item nav-link" href="{% url 'core:boards' %}">Boards</a>
+            <a class="nav-item nav-link" href="{% url 'core:tasks' %}">Tasks</a>
           {% endblock %}
         </div>
         <div class="navbar-nav navbar-right">
-          <a class="btn btn-primary btn-sm m-1" href="#" role="button"><span class="oi oi-clipboard pr-2"></span>Sign Up</a>
-          <a class="btn btn-secondary btn-sm m-1" href="#" role="button"><span class="oi oi-account-login pr-2"></span>Login</a>
+          <a class="btn btn-primary btn-sm m-1" href="{% url 'home:signup' %}" role="button"><span class="oi oi-clipboard pr-2"></span>Sign Up</a>
+          <a class="btn btn-secondary btn-sm m-1" href="{% url 'home:login' %}" role="button"><span class="oi oi-account-login pr-2"></span>Login</a>
         </div>
       </div>
     </header>

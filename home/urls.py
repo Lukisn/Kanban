@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-
 from django.urls import path
 from . import views
 
+
+app_name = "home"
 urlpatterns = [
-    path("", views.home, name="home")
-    # TODO: add login, logout, register views
+    path("", views.index, name="index"),
+    path("signup/", views.signup, name="signup"),
+    path("login/", views.login, name="login"),
 ]
