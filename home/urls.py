@@ -6,4 +6,5 @@ from . import views
 
 urlpatterns = [
     path("", views.home, name="home")
+    # TODO: add login, logout, register views
 ]

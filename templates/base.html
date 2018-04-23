@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <!-- Bootstrap CSS -->
@@ -11,16 +10,18 @@
     <title>{% block title %}Page Title{% endblock %}</title>
   </head>
   <body class="bg-light">
-    <header class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">Brandname</a>
+    <header class="navbar navbar-expand-md navbar-dark bg-dark">
+      <a class="navbar-brand" href="{% url "home" %}"><span class="oi oi-spreadsheet pr-2"></span>Kanban</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarContent">
         <div class="navbar-nav mr-auto">
-          <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-          <a class="nav-item nav-link" href="#">Link</a>
-          <a class="nav-item nav-link disabled" href="#">Disabled</a>
+          {% block navigation %}
+            <a class="nav-item nav-link active" href="#">Home</a>
+            <a class="nav-item nav-link" href="#">Link</a>
+            <a class="nav-item nav-link disabled" href="#">Disabled</a>
+          {% endblock %}
         </div>
         <div class="navbar-nav navbar-right">
           <a class="btn btn-primary btn-sm m-1" href="#" role="button"><span class="oi oi-clipboard pr-2"></span>Sign Up</a>
@@ -29,13 +30,14 @@
       </div>
     </header>
     <main class="container-fluid ">
-        {% block content %}
-            Page content
-        {% endblock %}
+      {% block content %}<h3>Page content</h3>{% endblock %}
     </main>
-    <footer class="container-fluid bg-dark">
+    <footer class="container-fluid">
       <div class="container">
-        <p class="text-muted">Footer</p>
+        <hr />
+        <p class="text-muted pt-4">
+          {% block footer %}Footer, &copy; 2018{% endblock %}
+        </p>
       </div>
     </footer>
     <!-- Bootstrap JavaScript -->
