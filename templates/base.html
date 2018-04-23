@@ -20,8 +20,8 @@
           {% block navigation %}
             <a class="nav-item nav-link active" href="{% url 'core:home' %}">Home</a>
             <a class="nav-item nav-link" href="{% url 'core:groups' %}">Groups</a>
-            <a class="nav-item nav-link" href="{% url 'core:boards' %}">Boards</a>
-            <a class="nav-item nav-link" href="{% url 'core:tasks' %}">Tasks</a>
+            <a class="nav-item nav-link" href="{% url 'core:board_list' %}">Boards</a>
+            <a class="nav-item nav-link" href="{% url 'core:task_list' %}">Tasks</a>
           {% endblock %}
         </div>
         <div class="navbar-nav navbar-right">

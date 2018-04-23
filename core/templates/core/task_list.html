@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="#">Home</a></li>
+      <li class="breadcrumb-item active">Tasks</li>
+    </ol>
+  </nav>
+
+  <h3>Tasks</h3>
+
+  <ul>
+    {% for task in tasks %}
+      <li><a href="{% url 'core:task_details' task.id %}">{{ task.name }}</a></li>
+    {% endfor %}
+  </ul>
+{% endblock %}

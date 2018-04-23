@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="#">Home</a></li>
+      <li class="breadcrumb-item active">Boards</li>
+    </ol>
+  </nav>
+
+  <h3>Boards</h3>
+  <div class="card-columns">
+    {% for board in boards %}
+      <div class="card">
+        <div class="card-header"><a href="{% url 'core:board_details'  board.id%}">{{ board.name }}</a></div>
+        <div class="card-body">
+          <p class="card-text">{{ board.description }}</p>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}

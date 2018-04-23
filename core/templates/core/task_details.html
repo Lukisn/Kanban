@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{% url 'core:home' %}">Home</a></li>
+      <li class="breadcrumb-item"><a href="{% url 'core:task_list' %}">Tasks</a></li>
+      <li class="breadcrumb-item active">{{ task.name }}</li>
+    </ol>
+  </nav>
+
+  <h3>{{ task.name }}</h3>
+  <p>{{ task.description }}</p>
+
+{% endblock %}
